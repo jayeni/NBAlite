@@ -9,11 +9,16 @@
 /* Begin PBXBuildFile section */
 		8527732A20D1777200E75F06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8527732920D1777200E75F06 /* AppDelegate.swift */; };
 		8527732C20D1777300E75F06 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8527732B20D1777300E75F06 /* ViewController.swift */; };
-		8527732F20D1777300E75F06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8527732D20D1777300E75F06 /* Main.storyboard */; };
 		8527733120D1777600E75F06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8527733020D1777600E75F06 /* Assets.xcassets */; };
-		8527733420D1777600E75F06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8527733220D1777600E75F06 /* LaunchScreen.storyboard */; };
 		8527733F20D1777700E75F06 /* NBAliteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8527733E20D1777700E75F06 /* NBAliteTests.swift */; };
 		8527734A20D1777700E75F06 /* NBAliteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8527734920D1777700E75F06 /* NBAliteUITests.swift */; };
+		8527735920D22EF900E75F06 /* TeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8527735820D22EF900E75F06 /* TeamCell.swift */; };
+		8527735F20D2318B00E75F06 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8527735E20D2318B00E75F06 /* Team.swift */; };
+		8527736320D254D300E75F06 /* Nba_logo.json in Resources */ = {isa = PBXBuildFile; fileRef = 8527736220D254D300E75F06 /* Nba_logo.json */; };
+		8527736820D5E48100E75F06 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8527736720D5E48100E75F06 /* PlayerView.swift */; };
+		8527736C20D5EAEC00E75F06 /* NavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8527736B20D5EAEC00E75F06 /* NavController.swift */; };
+		853FDE2520D60D5B004557E0 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853FDE2420D60D5B004557E0 /* PlayerCell.swift */; };
+		853FDE2720D60DA3004557E0 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853FDE2620D60DA3004557E0 /* Player.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,9 +42,7 @@
 		8527732620D1777200E75F06 /* NBAlite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NBAlite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8527732920D1777200E75F06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8527732B20D1777300E75F06 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8527732E20D1777300E75F06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8527733020D1777600E75F06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8527733320D1777600E75F06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8527733520D1777600E75F06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8527733A20D1777700E75F06 /* NBAliteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NBAliteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8527733E20D1777700E75F06 /* NBAliteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBAliteTests.swift; sourceTree = "<group>"; };
@@ -47,6 +50,13 @@
 		8527734520D1777700E75F06 /* NBAliteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NBAliteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8527734920D1777700E75F06 /* NBAliteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBAliteUITests.swift; sourceTree = "<group>"; };
 		8527734B20D1777700E75F06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8527735820D22EF900E75F06 /* TeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCell.swift; sourceTree = "<group>"; };
+		8527735E20D2318B00E75F06 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		8527736220D254D300E75F06 /* Nba_logo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Nba_logo.json; path = ../../../Downloads/Nba_logo.json; sourceTree = "<group>"; };
+		8527736720D5E48100E75F06 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		8527736B20D5EAEC00E75F06 /* NavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavController.swift; sourceTree = "<group>"; };
+		853FDE2420D60D5B004557E0 /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
+		853FDE2620D60DA3004557E0 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,11 +107,12 @@
 		8527732820D1777200E75F06 /* NBAlite */ = {
 			isa = PBXGroup;
 			children = (
+				8527736220D254D300E75F06 /* Nba_logo.json */,
+				8527735B20D230DB00E75F06 /* Model */,
+				8527735A20D22FF500E75F06 /* Controller */,
+				8527735720D22EBC00E75F06 /* View */,
 				8527732920D1777200E75F06 /* AppDelegate.swift */,
-				8527732B20D1777300E75F06 /* ViewController.swift */,
-				8527732D20D1777300E75F06 /* Main.storyboard */,
 				8527733020D1777600E75F06 /* Assets.xcassets */,
-				8527733220D1777600E75F06 /* LaunchScreen.storyboard */,
 				8527733520D1777600E75F06 /* Info.plist */,
 			);
 			path = NBAlite;
@@ -123,6 +134,34 @@
 				8527734B20D1777700E75F06 /* Info.plist */,
 			);
 			path = NBAliteUITests;
+			sourceTree = "<group>";
+		};
+		8527735720D22EBC00E75F06 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8527735820D22EF900E75F06 /* TeamCell.swift */,
+				853FDE2420D60D5B004557E0 /* PlayerCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8527735A20D22FF500E75F06 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8527736720D5E48100E75F06 /* PlayerView.swift */,
+				8527736B20D5EAEC00E75F06 /* NavController.swift */,
+				8527732B20D1777300E75F06 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8527735B20D230DB00E75F06 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8527735E20D2318B00E75F06 /* Team.swift */,
+				853FDE2620D60DA3004557E0 /* Player.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,9 +268,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8527733420D1777600E75F06 /* LaunchScreen.storyboard in Resources */,
+				8527736320D254D300E75F06 /* Nba_logo.json in Resources */,
 				8527733120D1777600E75F06 /* Assets.xcassets in Resources */,
-				8527732F20D1777300E75F06 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +296,12 @@
 			files = (
 				8527732C20D1777300E75F06 /* ViewController.swift in Sources */,
 				8527732A20D1777200E75F06 /* AppDelegate.swift in Sources */,
+				853FDE2520D60D5B004557E0 /* PlayerCell.swift in Sources */,
+				8527735F20D2318B00E75F06 /* Team.swift in Sources */,
+				853FDE2720D60DA3004557E0 /* Player.swift in Sources */,
+				8527736820D5E48100E75F06 /* PlayerView.swift in Sources */,
+				8527735920D22EF900E75F06 /* TeamCell.swift in Sources */,
+				8527736C20D5EAEC00E75F06 /* NavController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,25 +335,6 @@
 			targetProxy = 8527734620D1777700E75F06 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		8527732D20D1777300E75F06 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8527732E20D1777300E75F06 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		8527733220D1777600E75F06 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8527733320D1777600E75F06 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		8527734C20D1777700E75F06 /* Debug */ = {
