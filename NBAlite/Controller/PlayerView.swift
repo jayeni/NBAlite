@@ -8,13 +8,13 @@
 
 import UIKit
 
-class PlayerView: UIViewController{
+class PlayerView:UICollectionViewController, UICollectionViewDelegateFlowLayout{
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.brown
-        
         navigationItem.title = "Players"
         
     }
+  
 }

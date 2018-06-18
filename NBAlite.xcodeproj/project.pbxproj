@@ -19,6 +19,9 @@
 		8527736C20D5EAEC00E75F06 /* NavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8527736B20D5EAEC00E75F06 /* NavController.swift */; };
 		853FDE2520D60D5B004557E0 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853FDE2420D60D5B004557E0 /* PlayerCell.swift */; };
 		853FDE2720D60DA3004557E0 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853FDE2620D60DA3004557E0 /* Player.swift */; };
+		85B18C6F20D7EECC007B879B /* TeamMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B18C6E20D7EECC007B879B /* TeamMenu.swift */; };
+		85B18C7120D80175007B879B /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B18C7020D80175007B879B /* MenuCell.swift */; };
+		85B18C7320D80D66007B879B /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B18C7220D80D66007B879B /* Menu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,9 @@
 		8527736B20D5EAEC00E75F06 /* NavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavController.swift; sourceTree = "<group>"; };
 		853FDE2420D60D5B004557E0 /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
 		853FDE2620D60DA3004557E0 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		85B18C6E20D7EECC007B879B /* TeamMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMenu.swift; sourceTree = "<group>"; };
+		85B18C7020D80175007B879B /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		85B18C7220D80D66007B879B /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +147,7 @@
 			children = (
 				8527735820D22EF900E75F06 /* TeamCell.swift */,
 				853FDE2420D60D5B004557E0 /* PlayerCell.swift */,
+				85B18C7020D80175007B879B /* MenuCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -151,6 +158,7 @@
 				8527736720D5E48100E75F06 /* PlayerView.swift */,
 				8527736B20D5EAEC00E75F06 /* NavController.swift */,
 				8527732B20D1777300E75F06 /* ViewController.swift */,
+				85B18C6E20D7EECC007B879B /* TeamMenu.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -160,6 +168,7 @@
 			children = (
 				8527735E20D2318B00E75F06 /* Team.swift */,
 				853FDE2620D60DA3004557E0 /* Player.swift */,
+				85B18C7220D80D66007B879B /* Menu.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -295,10 +304,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8527732C20D1777300E75F06 /* ViewController.swift in Sources */,
+				85B18C6F20D7EECC007B879B /* TeamMenu.swift in Sources */,
 				8527732A20D1777200E75F06 /* AppDelegate.swift in Sources */,
 				853FDE2520D60D5B004557E0 /* PlayerCell.swift in Sources */,
 				8527735F20D2318B00E75F06 /* Team.swift in Sources */,
+				85B18C7320D80D66007B879B /* Menu.swift in Sources */,
 				853FDE2720D60DA3004557E0 /* Player.swift in Sources */,
+				85B18C7120D80175007B879B /* MenuCell.swift in Sources */,
 				8527736820D5E48100E75F06 /* PlayerView.swift in Sources */,
 				8527735920D22EF900E75F06 /* TeamCell.swift in Sources */,
 				8527736C20D5EAEC00E75F06 /* NavController.swift in Sources */,

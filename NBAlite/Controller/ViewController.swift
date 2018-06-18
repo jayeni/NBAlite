@@ -9,8 +9,11 @@
 import UIKit
 
 class TeamVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-    
+   
+    var  selectedteam: Team?
     var Teams: [Team]?
+    
+
     
     let cellID = "ID"
     func fetchTeams(){
@@ -58,17 +61,18 @@ class TeamVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
         
         
     }
-  
+ 
+
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(Teams![indexPath.row].teamName!)
-        let pV = PlayerView()
-       
-        navigationController?.pushViewController( pV , animated: true)
-       
-        
-       
+        selectedteam = Teams![indexPath.row]
+        let layout = UICollectionViewFlowLayout()
+        let tM = TeamMenu(collectionViewLayout: layout)
+        tM.selectedTeam = Teams![indexPath.row]
+        navigationController?.pushViewController( tM , animated: true)
         
     }
+
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let ccell=collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as!TeamCell
         ccell.team = Teams?[indexPath.item]
