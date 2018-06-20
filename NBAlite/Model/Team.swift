@@ -12,6 +12,9 @@ class Team: NSObject {
     var teamName: String?
     var teamLoc: String?
     var picloc: String?
+    var rosterURL: String?
+    var playerRoster: [Player]?
+    
    
     
     

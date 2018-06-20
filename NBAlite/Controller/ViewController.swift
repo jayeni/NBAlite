@@ -35,6 +35,8 @@ class TeamVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
                 teaml.teamName = dict["name"] as? String
                 teaml.teamLoc = dict["region"] as? String
                 teaml.picloc = dict["imgURL"] as? String
+                teaml.rosterURL = dict["rosterURL"] as? String
+                
                 self.Teams?.append(teaml)
             }
             DispatchQueue.main.async {

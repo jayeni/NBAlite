@@ -10,7 +10,7 @@ import UIKit
 class Player: NSObject {
     
     var firstName: String?
-    var sirName: String?
+    var surName: String?
     var picUrl: String?
     
     
