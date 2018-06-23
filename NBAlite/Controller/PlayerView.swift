@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import Alamofire
 
 class PlayerView:UICollectionViewController, UICollectionViewDelegateFlowLayout{
     var selectedTeam: Team?
+    var selectedPlayer: Player?
+
     var cellID = "ID"
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +28,7 @@ class PlayerView:UICollectionViewController, UICollectionViewDelegateFlowLayout{
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         return selectedTeam?.playerRoster?.count ?? 0;
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -32,6 +36,67 @@ class PlayerView:UICollectionViewController, UICollectionViewDelegateFlowLayout{
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsetsMake(8,8,8,8)
+    }
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedPlayer = selectedTeam?.playerRoster![indexPath.row]
+       
+       // fetchvid()
+     
+        let layout = UICollectionViewFlowLayout()
+        let vV = VideoView(collectionViewLayout: layout)
+        vV.selectedPlayer = selectedPlayer
+        navigationController?.pushViewController( vV , animated: true)
+        
+    }
+    func fetchvid(){
+        
+        let str = (selectedPlayer?.firstName)! + " " + (selectedPlayer?.surName)! + " nba hilights"
+        Alamofire.request("https://www.googleapis.com/youtube/v3/search", method: .get, parameters: ["part":"snippet","order":"viewCount","type":"video","q":str,"key":"AIzaSyA4RweMI9pQ0ZeyR1NJwTIBZkZB2e6h08k"], encoding: URLEncoding.default, headers: nil ).responseJSON(completionHandler: { (response) in
+            var vidl: [Video] = []
+            if let JSON = response.result.value{
+                
+                
+                
+                if let dictionary = JSON as? [String: Any] {
+                    
+                    if let dict = dictionary["items"] as? [Any]
+                    {
+                        for i in 0..<dict.count {
+                            
+                            let vid = Video()
+                            if let video = dict[i] as? [String: Any] {
+                               // print(dict)
+                                let v = video["id"]  as? [String: Any]
+                                vid.vidID = v?["videoId"] as! String
+                               // print(vid.vidID)
+                        
+                                
+                                
+                                if let thumbnails = video["snippet"] as? [String: Any]{
+                                    
+                                    let vth = thumbnails["thumbnails"]  as? [String: Any]
+                                    let vquality = vth!["high"]  as? [String: Any]
+                                    vid.thumbNail = vquality?["url"] as! String
+                                   print(vid.thumbNail ?? "NA")
+                                    
+                                }
+                                vidl.append(vid)
+                                 self.selectedPlayer?.videos.append(vid)
+                            }
+                            self.selectedPlayer?.videos.append(vid)
+                            print(vidl.count)
+                            //end of for
+
+                        }
+                        self.selectedPlayer?.videos = vidl
+                        
+                    }
+                }
+                
+            }
+            
+            
+        })
     }
   
 }

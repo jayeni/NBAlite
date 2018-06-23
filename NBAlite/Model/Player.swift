@@ -12,6 +12,9 @@ class Player: NSObject {
     var firstName: String?
     var surName: String?
     var picUrl: String?
+    var vidUrl: String?
+    var videos: [Video] = []
+    
     
     
 }

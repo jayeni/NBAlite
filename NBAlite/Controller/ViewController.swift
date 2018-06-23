@@ -7,13 +7,36 @@
 //
 
 import UIKit
+import Alamofire
 
 class TeamVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
    
     var  selectedteam: Team?
     var Teams: [Team]?
     
-
+    func fetchvid(){
+        print("here")
+        Alamofire.request("https://www.googleapis.com/youtube/v3/search", method: .get, parameters: ["part":"snippet","order":"viewCount","videoDefinition":"high","type":"video","q":"lebron","key":"AIzaSyA4RweMI9pQ0ZeyR1NJwTIBZkZB2e6h08k"], encoding: URLEncoding.default, headers: nil ).responseJSON(completionHandler: { (response) in
+            
+            if let JSON = response.result.value{
+                
+               
+         
+                if let dictionary = JSON as? [String: Any] {
+                    
+                    if let playlist = dictionary["items"] as? [Any]
+                    {
+                        for i in 0..<playlist.count {
+                            print(playlist[i])
+                        }
+                    }
+                }
+                
+            }
+            
+            
+        })
+    }
     
     let cellID = "ID"
     func fetchTeams(){
@@ -60,7 +83,7 @@ class TeamVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
         collectionView?.register(TeamCell.self, forCellWithReuseIdentifier: cellID)
         navigationItem.title = "Teams"
       
-        
+        //fetchvid()
         
     }
  

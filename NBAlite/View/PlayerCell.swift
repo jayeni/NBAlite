@@ -7,15 +7,68 @@
 //
 
 import UIKit
+import Alamofire
 
 class PlayerCell:  UICollectionViewCell{
     var player:Player?{
         didSet{
             Name.text = (player?.firstName)! + " " + (player?.surName)!
             setupImage()
+            fetchvid()
             
         }
     }
+    func fetchvid(){
+        
+        let str = Name.text! + " nba highlights"
+        Alamofire.request("https://www.googleapis.com/youtube/v3/search", method: .get, parameters: ["part":"snippet","type":"video","q":str,"key":"AIzaSyA4RweMI9pQ0ZeyR1NJwTIBZkZB2e6h08k"], encoding: URLEncoding.default, headers: nil ).responseJSON(completionHandler: { (response) in
+            var vidl: [Video] = []
+            if let JSON = response.result.value{
+                
+                
+                
+                if let dictionary = JSON as? [String: Any] {
+                    
+                    if let dict = dictionary["items"] as? [Any]
+                    {
+                        for i in 0..<dict.count {
+                            
+                            let vid = Video()
+                            if let video1 = dict[i] as? [String: Any] {
+                                // print(dict)
+                                let v = video1["id"]  as? [String: Any]
+                                vid.vidID = v?["videoId"] as! String
+                                // print(vid.vidID)
+                                
+                                
+                                
+                                if let thumbnails = video1["snippet"] as? [String: Any]{
+                                    
+                                    let vth = thumbnails["thumbnails"]  as? [String: Any]
+                                    let vquality = vth!["high"]  as? [String: Any]
+                                    vid.thumbNail = vquality?["url"] as! String
+                                    print(vid.thumbNail ?? "NA")
+                                    
+                                }
+                           
+                                self.player?.videos.append(vid)
+
+                            }
+                            print(self.player?.videos.count)
+                            //end of for
+                            
+                        }
+                   
+                        
+                    }
+                }
+                
+            }
+            
+            
+        })
+    }
+    
     override init(frame: CGRect){
         super.init(frame: frame)
         setupCell()
@@ -41,6 +94,7 @@ class PlayerCell:  UICollectionViewCell{
             
         }
     }
+
     func setupCell(){
         self.backgroundColor=UIColor.darkGray
         addSubview(Name)
