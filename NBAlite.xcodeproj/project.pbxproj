@@ -195,10 +195,10 @@
 			isa = PBXGroup;
 			children = (
 				8527736720D5E48100E75F06 /* PlayerView.swift */,
+				85B18C6E20D7EECC007B879B /* TeamMenu.swift */,
 				856F07DD20DD85F10048784D /* VideoView.swift */,
 				8527736B20D5EAEC00E75F06 /* NavController.swift */,
 				8527732B20D1777300E75F06 /* ViewController.swift */,
-				85B18C6E20D7EECC007B879B /* TeamMenu.swift */,
 				856F07E120DDB3B50048784D /* VideoSingleView.swift */,
 			);
 			path = Controller;

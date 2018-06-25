@@ -26,12 +26,12 @@ class MenuCell : UICollectionViewCell{
     }
     func setup(){
         
-            self.backgroundColor=UIColor.darkGray
+            self.backgroundColor = UIColor.init(white: 1, alpha: 0.5)
             addSubview(cellName)
             addSubview(cellImage)
-            addConstraints(NSLayoutConstraint.constraints(withVisualFormat:"H:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0" : cellImage]))
-            addConstraints(NSLayoutConstraint.constraints(withVisualFormat:"H:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0" : cellName]))
-            addConstraints(NSLayoutConstraint.constraints(withVisualFormat:"V:|[v0][v1]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0" : cellName,"v1" : cellImage]))
+            addConstraints(NSLayoutConstraint.constraints(withVisualFormat:"H:|-100-[v0(200)]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0" : cellImage]))
+            addConstraints(NSLayoutConstraint.constraints(withVisualFormat:"H:|-40-[v0(300)]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0" : cellName]))
+            addConstraints(NSLayoutConstraint.constraints(withVisualFormat:"V:|[v0]-10-[v1]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0" : cellName,"v1" : cellImage]))
             
             //self.addSubview(teamImage)
             
@@ -41,7 +41,7 @@ class MenuCell : UICollectionViewCell{
     let cellName: UILabel = {
         let name = UILabel()
         name.text="TEXT"
-        name.textColor = UIColor.white
+        name.textColor = UIColor.black
         name.textAlignment = .center
         name.font = UIFont.boldSystemFont(ofSize: 20)
         name.translatesAutoresizingMaskIntoConstraints=false
@@ -51,6 +51,7 @@ class MenuCell : UICollectionViewCell{
     
     let cellImage: UIImageView = {
         let imageV = UIImageView()
+        
         imageV.contentMode = .scaleAspectFit
         imageV.translatesAutoresizingMaskIntoConstraints=false;
         

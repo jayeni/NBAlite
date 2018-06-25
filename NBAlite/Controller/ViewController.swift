@@ -59,6 +59,8 @@ class TeamVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
                 teaml.teamLoc = dict["region"] as? String
                 teaml.picloc = dict["imgURL"] as? String
                 teaml.rosterURL = dict["rosterURL"] as? String
+                teaml.Pcolor = UIColor(red: dict["r"] as! CGFloat, green: dict["g"] as! CGFloat,blue: dict["b"] as! CGFloat, alpha: dict["a"] as! CGFloat)
+                teaml.Scolor = UIColor(red: dict["r2"] as! CGFloat, green: dict["g2"] as! CGFloat,blue: dict["b2"] as! CGFloat, alpha: dict["a2"] as! CGFloat)
                 
                 self.Teams?.append(teaml)
             }
@@ -79,9 +81,22 @@ class TeamVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
          fetchTeams()
-        collectionView?.backgroundColor = UIColor.lightGray
+        navigationController?.navigationBar.barTintColor = UIColor(red:0.00, green:0.42, blue:0.71, alpha:1.0)
+        collectionView?.backgroundColor = UIColor(red:0.75, green:0.75, blue:0.76, alpha:1.0)
         collectionView?.register(TeamCell.self, forCellWithReuseIdentifier: cellID)
-        navigationItem.title = "Teams"
+        let image = UIImage(named: "nbalogo")
+        let imageV = UIImageView(image: image)
+        
+        let Width = self.navigationController?.navigationBar.frame.size.width
+        let Hieght  = self.navigationController?.navigationBar.frame.size.height
+        let BarX = Width! / 2 - (image?.size.width)! / 2
+        let BarY = Hieght! / 2 - (image?.size.height)! / 2
+        
+        imageV.frame = CGRect(x: BarX, y: BarY, width: Width!, height: Hieght!)
+        imageV.contentMode = .scaleAspectFit
+        navigationItem.titleView = imageV
+        navigationItem.titleView = imageV
+    
       
         //fetchvid()
         

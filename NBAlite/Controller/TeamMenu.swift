@@ -11,13 +11,28 @@ import UIKit
 class TeamMenu : UICollectionViewController, UICollectionViewDelegateFlowLayout {
     var cellID = "cellId"
     var selectedTeam: Team?
-    var menu = [Menu(name: "Scedule",image: "schedule"),Menu(name: "Roster",image: "clipboard")]
+    var menu = [Menu(name: "Scedule",image: "schedule"),Menu(name: "Roster",image: "roster")]
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView?.backgroundColor = UIColor.brown
-        navigationItem.title = selectedTeam?.teamName
+        collectionView?.backgroundColor = selectedTeam?.Scolor
+        navigationController?.navigationBar.barTintColor = selectedTeam?.Pcolor
+       
         collectionView?.register(MenuCell.self, forCellWithReuseIdentifier: cellID)
          fetchPlayers()
+       // navigationItem.titleView
+            let image = selectedTeam?.cachImage?.object(forKey: selectedTeam?.picloc as! NSString) as! UIImage
+            let imageV = UIImageView(image: selectedTeam?.cachImage?.object(forKey: selectedTeam?.picloc as! NSString) as! UIImage)
+        
+        let Width = self.navigationController?.navigationBar.frame.size.width
+        let Hieght  = self.navigationController?.navigationBar.frame.size.height
+        let BarX = Width! / 2 - image.size.width / 2
+        let BarY = Hieght! / 2 - image.size.height / 2
+        
+        imageV.frame = CGRect(x: BarX, y: BarY, width: Width!, height: Hieght!)
+        imageV.contentMode = .scaleAspectFit
+        navigationItem.titleView = imageV
+        
+        
    
     }
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -30,10 +45,10 @@ class TeamMenu : UICollectionViewController, UICollectionViewDelegateFlowLayout 
         return 2;
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (view.frame.width/2)-16, height: 300)
+        return CGSize(width: (view.frame.width)-20, height: 250-16)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsetsMake(8,8,8,8)
+        return UIEdgeInsetsMake(10,10,10,10)
     }
     func fetchPlayers(){
         
@@ -67,15 +82,21 @@ class TeamMenu : UICollectionViewController, UICollectionViewDelegateFlowLayout 
                         if count != fullNameArr.count {
                             playerl.surName?.append(" ")
                         }
-                        self.selectedTeam?.playerRoster?.append(playerl)
+                        
                     }
-
+                    self.selectedTeam?.playerRoster?.append(playerl)
                     playerl.picUrl = "https://nba-players.herokuapp.com/players/"
                     
-                    let surname = playerl.surName?.replacingOccurrences(of: " ", with: "_")
+                    var surname = playerl.surName?.replacingOccurrences(of: " ", with: "_")
+                    surname = surname?.replacingOccurrences(of: ".", with: "")
+                    surname = surname?.replacingOccurrences(of: "'", with: "")
+                    var firstname = playerl.firstName?.replacingOccurrences(of: " ", with: "_")
+                    firstname = firstname?.replacingOccurrences(of: ".", with: "")
+                    firstname = firstname?.replacingOccurrences(of: "'", with: "")
+                    
                     playerl.picUrl?.append(surname ?? "N/A")
                     playerl.picUrl?.append("/")
-                    playerl.picUrl?.append(playerl.firstName ?? "N/A")
+                    playerl.picUrl?.append(firstname ?? "N/A")
                 
             }       
                 DispatchQueue.main.async {

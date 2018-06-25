@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 class Team: NSObject {
     
     var teamName: String?
@@ -14,6 +15,9 @@ class Team: NSObject {
     var picloc: String?
     var rosterURL: String?
     var playerRoster: [Player]?
+    var cachImage : NSCache<AnyObject, AnyObject>?
+    var Pcolor : UIColor?
+    var Scolor : UIColor?
     
    
     

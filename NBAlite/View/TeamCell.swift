@@ -14,7 +14,7 @@ class TeamCell: UICollectionViewCell{
             teamName.text = team?.teamName
             teamLoc.text = team?.teamLoc
             setupImage()
-            
+            team?.cachImage = NSCache<NSString,UIImage>() as! NSCache<AnyObject, AnyObject>
         }
     }
     override init(frame: CGRect){
@@ -25,14 +25,14 @@ class TeamCell: UICollectionViewCell{
     override var isSelected: Bool{
         didSet{
            
-            self.backgroundColor = isSelected ? UIColor.black : UIColor.darkGray
+            self.backgroundColor = isSelected ? UIColor.black : UIColor.init(white: 1, alpha: 0.5)
             backgroundView?.backgroundColor = UIColor.black
             
         }
     }
     
     func setupCell(){
-        self.backgroundColor=UIColor.darkGray
+        self.backgroundColor = UIColor.init(white: 1, alpha: 0.5)
         addSubview(teamName)
         addSubview(teamLoc)
         addSubview(teamImage)
@@ -46,16 +46,25 @@ class TeamCell: UICollectionViewCell{
     }
     func setupImage(){
         if let imageurl = team?.picloc{
-            
+            self.backgroundColor = UIColor.init(white: 1, alpha: 0.5)
             let url = URL(string: imageurl)
+            
             
             URLSession.shared.dataTask(with: url!){ (data, response, error) in
                 
                 if error != nil {
                     return
                 }
+                
                 DispatchQueue.main.async {
-                    self.teamImage.image = UIImage(data: data!)
+                    
+                    let imagec = UIImage(data: data!)
+                    if url?.absoluteString == self.team?.picloc{
+                        self.teamImage.image = imagec
+                    }
+                    
+                         self.team?.cachImage?.setObject(imagec!, forKey: (url?.absoluteString as NSString?)!)
+                    
                 }
                 
             
@@ -67,7 +76,7 @@ class TeamCell: UICollectionViewCell{
     let teamName: UILabel = {
         let nameL = UILabel()
         nameL.text="TEXT"
-        nameL.textColor = UIColor.white
+        nameL.textColor = UIColor.darkText
         nameL.textAlignment = .center
         nameL.font = UIFont.boldSystemFont(ofSize: 14)
         nameL.translatesAutoresizingMaskIntoConstraints=false
@@ -77,7 +86,7 @@ class TeamCell: UICollectionViewCell{
     let teamLoc: UILabel = {
         let namer = UILabel()
         namer.text="TEXT"
-        namer.textColor = UIColor.white
+        namer.textColor = UIColor.darkText
         namer.textAlignment = .center
         namer.font = UIFont.boldSystemFont(ofSize: 14)
         namer.translatesAutoresizingMaskIntoConstraints=false

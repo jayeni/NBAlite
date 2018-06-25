@@ -12,15 +12,17 @@ import AVKit
 
 class VideoView:UICollectionViewController, UICollectionViewDelegateFlowLayout{
     var selectedPlayer: Player?
+    var selectedTeam: Team?
     var selectedVideo: Video?
     var cellID = "ID"
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView?.backgroundColor = UIColor.brown
+        collectionView?.backgroundColor = selectedTeam?.Scolor
+        navigationController?.navigationBar.barTintColor = selectedTeam?.Pcolor
         navigationItem.title = ((selectedPlayer?.firstName)!+" "+(selectedPlayer?.surName)!)
         collectionView?.register(VideoCell.self, forCellWithReuseIdentifier: cellID)
         
-       
+        
         
     }
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -45,9 +47,9 @@ class VideoView:UICollectionViewController, UICollectionViewDelegateFlowLayout{
         selectedVideo = selectedPlayer?.videos[indexPath.row]
         vsV.selectedVideo = selectedVideo
         navigationController?.pushViewController( vsV , animated: true)
- 
+        
+        
+        
+    }
     
-   
-}
-
 }

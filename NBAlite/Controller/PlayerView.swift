@@ -12,13 +12,24 @@ import Alamofire
 class PlayerView:UICollectionViewController, UICollectionViewDelegateFlowLayout{
     var selectedTeam: Team?
     var selectedPlayer: Player?
-
+    
     var cellID = "ID"
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView?.backgroundColor = UIColor.brown
-        navigationItem.title = (selectedTeam?.teamName)!
-         collectionView?.register(PlayerCell.self, forCellWithReuseIdentifier: cellID)
+        collectionView?.backgroundColor = selectedTeam?.Scolor
+        navigationController?.navigationBar.barTintColor = selectedTeam?.Pcolor
+        let image = selectedTeam?.cachImage?.object(forKey: selectedTeam?.picloc as! NSString) as! UIImage
+        let imageV = UIImageView(image: selectedTeam?.cachImage?.object(forKey: selectedTeam?.picloc as! NSString) as! UIImage)
+        
+        let Width = self.navigationController?.navigationBar.frame.size.width
+        let Hieght  = self.navigationController?.navigationBar.frame.size.height
+        let BarX = Width! / 2 - image.size.width / 2
+        let BarY = Hieght! / 2 - image.size.height / 2
+        
+        imageV.frame = CGRect(x: BarX, y: BarY, width: Width!, height: Hieght!)
+        imageV.contentMode = .scaleAspectFit
+        navigationItem.titleView = imageV
+        collectionView?.register(PlayerCell.self, forCellWithReuseIdentifier: cellID)
         
     }
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -39,12 +50,13 @@ class PlayerView:UICollectionViewController, UICollectionViewDelegateFlowLayout{
     }
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedPlayer = selectedTeam?.playerRoster![indexPath.row]
-       
-       // fetchvid()
-     
+        
+        // fetchvid()
+        
         let layout = UICollectionViewFlowLayout()
         let vV = VideoView(collectionViewLayout: layout)
         vV.selectedPlayer = selectedPlayer
+        vV.selectedTeam = selectedTeam
         navigationController?.pushViewController( vV , animated: true)
         
     }
@@ -65,11 +77,11 @@ class PlayerView:UICollectionViewController, UICollectionViewDelegateFlowLayout{
                             
                             let vid = Video()
                             if let video = dict[i] as? [String: Any] {
-                               // print(dict)
+                                // print(dict)
                                 let v = video["id"]  as? [String: Any]
                                 vid.vidID = v?["videoId"] as! String
-                               // print(vid.vidID)
-                        
+                                // print(vid.vidID)
+                                
                                 
                                 
                                 if let thumbnails = video["snippet"] as? [String: Any]{
@@ -77,16 +89,15 @@ class PlayerView:UICollectionViewController, UICollectionViewDelegateFlowLayout{
                                     let vth = thumbnails["thumbnails"]  as? [String: Any]
                                     let vquality = vth!["high"]  as? [String: Any]
                                     vid.thumbNail = vquality?["url"] as! String
-                                   print(vid.thumbNail ?? "NA")
+                                    print(vid.thumbNail ?? "NA")
                                     
                                 }
                                 vidl.append(vid)
-                                 self.selectedPlayer?.videos.append(vid)
+                                self.selectedPlayer?.videos.append(vid)
                             }
                             self.selectedPlayer?.videos.append(vid)
                             print(vidl.count)
                             //end of for
-
                         }
                         self.selectedPlayer?.videos = vidl
                         
@@ -98,5 +109,5 @@ class PlayerView:UICollectionViewController, UICollectionViewDelegateFlowLayout{
             
         })
     }
-  
+    
 }

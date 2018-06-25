@@ -13,7 +13,7 @@ class VideoSingleView:UICollectionViewController, UICollectionViewDelegateFlowLa
     var cellID = "ID"
     override func viewDidLoad() {
         super.viewDidLoad()
-   
+       
         var str = "https://www.youtube.com/embed/"+(selectedVideo?.vidID)!
         
         let url = URL(string: str)
@@ -23,7 +23,13 @@ class VideoSingleView:UICollectionViewController, UICollectionViewDelegateFlowLa
         
         self.view.addSubview(webV)
         webV.loadRequest(URLRequest(url: url!))
-        
+       
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: (view.frame.width), height: 45)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsetsMake(8,8,8,8)
     }
    
     

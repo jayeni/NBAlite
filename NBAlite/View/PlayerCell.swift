@@ -50,15 +50,15 @@ class PlayerCell:  UICollectionViewCell{
                                     print(vid.thumbNail ?? "NA")
                                     
                                 }
-                           
+                                
                                 self.player?.videos.append(vid)
-
+                                
                             }
                             print(self.player?.videos.count)
                             //end of for
                             
                         }
-                   
+                        
                         
                     }
                 }
@@ -94,14 +94,14 @@ class PlayerCell:  UICollectionViewCell{
             
         }
     }
-
+    
     func setupCell(){
-        self.backgroundColor=UIColor.darkGray
+        self.backgroundColor =  UIColor.init(white: 1, alpha: 0.5)
         addSubview(Name)
         addSubview(picURL)
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat:"H:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0" : Name]))
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat:"H:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0" : picURL]))
-    
+        
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat:"V:|[v1(75)][v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0" :  Name, "v1" : picURL]))
         
         
@@ -109,7 +109,7 @@ class PlayerCell:  UICollectionViewCell{
     let Name: UILabel = {
         let nameLabel = UILabel()
         nameLabel.text="TEXT"
-        nameLabel.textColor = UIColor.white
+        nameLabel.textColor = UIColor.darkText
         nameLabel.textAlignment = .center
         nameLabel.font = UIFont.boldSystemFont(ofSize: 14)
         nameLabel.translatesAutoresizingMaskIntoConstraints=false
@@ -131,4 +131,3 @@ class PlayerCell:  UICollectionViewCell{
     }
     
 }
-
