@@ -32,7 +32,7 @@ class VideoView:UICollectionViewController, UICollectionViewDelegateFlowLayout{
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print( selectedPlayer?.videos.count)
+        //print( selectedPlayer?.videos.count)
         return selectedPlayer?.videos.count ?? 0;
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
