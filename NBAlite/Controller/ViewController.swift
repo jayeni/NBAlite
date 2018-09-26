@@ -24,7 +24,7 @@ class TeamVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
          
                 if let dictionary = JSON as? [String: Any] {
                     
-                    if let playlist = dictionary["items"] as? [Any]
+                    if (dictionary["items"] as? [Any]) != nil
                     {
                       //  for i in 0..<playlist.count {
                             //print(playlist[i])
@@ -47,6 +47,7 @@ class TeamVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
         do{
             
             let data = try Data(contentsOf: url)
+        
             let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
             
             self.Teams = [Team]()
@@ -116,8 +117,9 @@ class TeamVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let ccell=collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as!TeamCell
         ccell.team = Teams?[indexPath.item]
+        ccell.layer.cornerRadius = 10.0
         return ccell
-     }
+    }
    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return Teams?.count ?? 0;

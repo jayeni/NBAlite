@@ -22,7 +22,7 @@ class PlayerCell:  UICollectionViewCell{
         
         let str = Name.text! + " nba highlights"
         Alamofire.request("https://www.googleapis.com/youtube/v3/search", method: .get, parameters: ["part":"snippet","type":"video","q":str,"key":"AIzaSyA4RweMI9pQ0ZeyR1NJwTIBZkZB2e6h08k"], encoding: URLEncoding.default, headers: nil ).responseJSON(completionHandler: { (response) in
-            var vidl: [Video] = []
+        
             if let JSON = response.result.value{
                 
                 
@@ -37,7 +37,7 @@ class PlayerCell:  UICollectionViewCell{
                             if let video1 = dict[i] as? [String: Any] {
                                 // print(dict)
                                 let v = video1["id"]  as? [String: Any]
-                                vid.vidID = v?["videoId"] as! String
+                                vid.vidID = v?["videoId"] as? String
                                 // print(vid.vidID)
                                 
                                 
@@ -46,15 +46,15 @@ class PlayerCell:  UICollectionViewCell{
                                     
                                     let vth = thumbnails["thumbnails"]  as? [String: Any]
                                     let vquality = vth!["high"]  as? [String: Any]
-                                    vid.thumbNail = vquality?["url"] as! String
-                                    print(vid.thumbNail ?? "NA")
+                                    vid.thumbNail = vquality?["url"] as? String
+                                    
                                     
                                 }
                                 
                                 self.player?.videos.append(vid)
                                 
                             }
-                            print(self.player?.videos.count)
+                           
                             //end of for
                             
                         }

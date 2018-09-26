@@ -14,7 +14,7 @@ class VideoSingleView:UICollectionViewController, UICollectionViewDelegateFlowLa
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        var str = "https://www.youtube.com/embed/"+(selectedVideo?.vidID)!
+        let str = "https://www.youtube.com/embed/"+(selectedVideo?.vidID)!
         
         let url = URL(string: str)
         

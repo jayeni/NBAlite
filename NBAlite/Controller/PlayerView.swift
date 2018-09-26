@@ -39,7 +39,7 @@ class PlayerView:UICollectionViewController, UICollectionViewDelegateFlowLayout{
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    
+        
         return selectedTeam?.playerRoster?.count ?? 0;
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -89,14 +89,14 @@ class PlayerView:UICollectionViewController, UICollectionViewDelegateFlowLayout{
                                     let vth = thumbnails["thumbnails"]  as? [String: Any]
                                     let vquality = vth!["high"]  as? [String: Any]
                                     vid.thumbNail = vquality?["url"] as! String
-                                   // print(vid.thumbNail ?? "NA")
+                                    // print(vid.thumbNail ?? "NA")
                                     
                                 }
                                 vidl.append(vid)
                                 self.selectedPlayer?.videos.append(vid)
                             }
                             self.selectedPlayer?.videos.append(vid)
-                          //  print(vidl.count)
+                            //  print(vidl.count)
                             //end of for
                         }
                         self.selectedPlayer?.videos = vidl

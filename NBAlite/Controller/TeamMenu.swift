@@ -59,7 +59,7 @@ class TeamMenu : UICollectionViewController, UICollectionViewDelegateFlowLayout 
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             
-            guard let data = data else {return}
+            guard data != nil else {return}
            // let dstr = String(data: data, encoding: .utf8 )
             do{
                 

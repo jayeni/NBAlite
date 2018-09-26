@@ -14,7 +14,7 @@ class TeamCell: UICollectionViewCell{
             teamName.text = team?.teamName
             teamLoc.text = team?.teamLoc
             setupImage()
-            team?.cachImage = NSCache<NSString,UIImage>() as! NSCache<AnyObject, AnyObject>
+            team?.cachImage = NSCache<NSString,UIImage>() as? NSCache<AnyObject, AnyObject>
         }
     }
     override init(frame: CGRect){
