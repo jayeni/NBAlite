@@ -1,0 +1,272 @@
+[
+  {
+    "imgURL": "http://i.imgur.com/w4iqpAJ.png",
+    "rosterURL": "https://nba-players.herokuapp.com/players-stats-teams/cle",
+    "teamName": "Atlanta Hawks",
+    "name": "Hawks",
+    "region": "Atlanta",
+    "color1": "#E03A3E",
+    "color2": "#26282A"
+  },
+  {
+    "imgURL": "http://i.imgur.com/xKp3GGG.png",
+    "rosterURL": "https://nba-players.herokuapp.com/players-stats-teams/bos",
+    "teamName": "Boston Celtics",
+    "name": "Celtics",
+    "region": "Boston",
+    "color1": "#007A33",
+    "color2": "#BA9653"
+  },
+  {
+    "imgURL": "http://i.imgur.com/FFpCgxk.png",
+    "rosterURL": "https://nba-players.herokuapp.com/players-stats-teams/bro",
+    "teamName": "Brooklyn Nets",
+    "name": "Nets",
+    "region": "Brooklyn",
+    "color1": "#000000",
+    "color2": "#FFFFFF"
+  },
+  {
+    "imgURL": "http://i.imgur.com/hW7G08N.png",
+    "rosterURL": "https://nba-players.herokuapp.com/players-stats-teams/chi",
+    "teamName": "Charlotte Hornets",
+    "name": "Hornets",
+    "region": "Charlotte",
+    "color1": "#1D1160",
+    "color2": "#00788C"
+  },
+  {
+    "imgURL": "http://i.imgur.com/rZ3SS1g.png",
+    "rosterURL": "https://nba-players.herokuapp.com/players-stats-teams/chi",
+    "teamName": "Chicago Bulls",
+    "name": "Bulls",
+    "region": "Chicago",
+    "color1": "#CE1141",
+    "color2": "#000000"
+  },
+  {
+    "imgURL": "http://i.imgur.com/poSVytp.png",
+    "rosterURL": "https://nba-players.herokuapp.com/players-stats-teams/cle",
+    "teamName": "Cleveland Cavaliers",
+    "name": "Cavaliers",
+    "region": "Cleveland",
+    "color1": "#6F263D",
+    "color2": "#041E42"
+  },
+  {
+    "imgURL": "http://i.imgur.com/6OXc92q.png",
+    "rosterURL": "https://nba-players.herokuapp.com/players-stats-teams/dal",
+    "teamName": "Dallas Mavericks",
+    "name": "Mavericks",
+    "region": "Dallas",
+    "color1": "#00538C",
+    "color2": "#002B5E"
+  },
+  {
+    "imgURL": "http://i.imgur.com/nNlQZtS.png",
+    "rosterURL": "https://nba-players.herokuapp.com/players-stats-teams/den",
+    "teamName": "Denver Nuggets",
+    "name": "Nuggets",
+    "region": "Denver",
+    "color1": "#0E2240",
+    "color2": "#FEC524"
+  },
+  {
+    "imgURL": "http://i.imgur.com/27s66Rc.png",
+    "rosterURL": "https://nba-players.herokuapp.com/players-stats-teams/det",
+    "teamName": "Detroit Pistons",
+    "name": "Pistons",
+    "region": "Detroit",
+    "color1": "#C8102E",
+    "color2": "#006BB6"
+  },
+  {
+    "imgURL": "http://i.imgur.com/0b33z89.png",
+    "rosterURL": "https://nba-players.herokuapp.com/players-stats-teams/gsw",
+    "teamName": "Golden State Warriors",
+    "name": "Warriors",
+    "region": "Golden State",
+    "color1": "#006BB6",
+    "color2": "#FDB927"
+  },
+  {
+    "imgURL": "http://i.imgur.com/bRhMnde.png",
+    "rosterURL": "https://nba-players.herokuapp.com/players-stats-teams/hou",
+    "teamName": "Houston Rockets",
+    "name": "Rockets",
+    "region": "Houston",
+    "color1": "#CE1141",
+    "color2": "#000000"
+  },
+  {
+    "imgURL": "http://i.imgur.com/oMAnnYz.png",
+    "rosterURL": "https://nba-players.herokuapp.com/players-stats-teams/ind",
+    "teamName": "Indiana Pacers",
+    "name": "Pacers",
+    "region": "Indiana",
+    "color1": "#002D62",
+    "color2": "#FDBB30"
+  },
+  {
+    "imgURL": "http://i.imgur.com/PLcT06l.png",
+    "rosterURL": "https://nba-players.herokuapp.com/players-stats-teams/lac",
+    "teamName": "Los Angeles Clippers",
+    "name": "Clippers",
+    "region": "Los Angeles",
+    "color1": "#C8102E",
+    "color2": "#1D428A"
+  },
+  {
+    "imgURL": "http://i.imgur.com/vDHR32y.png",
+    "rosterURL": "https://nba-players.herokuapp.com/players-stats-teams/lal",
+    "teamName": "Los Angeles Lakers",
+    "name": "Lakers",
+    "region": "Los Angeles",
+    "color1": "#552583",
+    "color2": "#FDB927"
+  },
+  {
+    "imgURL": "http://i.imgur.com/oNKkrY1.png",
+    "rosterURL": "https://nba-players.herokuapp.com/players-stats-teams/mem",
+    "teamName": "Memphis Grizzlies",
+    "name": "Grizzlies",
+    "region": "Memphis",
+    "color1": "#5D76A9",
+    "color2": "#12173F"
+  },
+  {
+    "imgURL": "http://i.imgur.com/bsyplzQ.png",
+    "rosterURL": "https://nba-players.herokuapp.com/players-stats-teams/mia",
+    "teamName": "Miami Heat",
+    "name": "Heat",
+    "region": "Miami",
+    "color1": "#98002E",
+    "color2": "#F9A01B"
+  },
+  {
+    "imgURL": "http://i.imgur.com/DphT0BT.png",
+    "rosterURL": "https://nba-players.herokuapp.com/players-stats-teams/mil",
+    "teamName": "Milwaukee Bucks",
+    "name": "Bucks",
+    "region": "Milwaukee",
+    "color1": "#00471B",
+    "color2": "#EEE1C6"
+  },
+  {
+    "imgURL": "http://i.imgur.com/Dk0eBGT.png",
+    "rosterURL": "https://nba-players.herokuapp.com/players-stats-teams/min",
+    "teamName": "Minnesota Timberwolves",
+    "name": "Timberwolves",
+    "region": "Minnesota",
+    "color1": "#0C2340",
+    "color2": "#236192"
+  },
+  {
+    "imgURL": "http://i.imgur.com/vB0C6GZ.png",
+    "rosterURL": "https://nba-players.herokuapp.com/players-stats-teams/nor",
+    "teamName": "New Orleans Pelicans",
+    "name": "Pelicans",
+    "region": "New Orleans",
+    "color1": "#0C2340",
+    "color2": "#C8102E"
+  },
+  {
+    "imgURL": "http://i.imgur.com/5sMoAPA.png",
+    "rosterURL": "https://nba-players.herokuapp.com/players-stats-teams/nyk",
+    "teamName": "New York Knicks",
+    "name": "Knicks",
+    "region": "New York",
+    "color1": "#006BB6",
+    "color2": "#F58426"
+  },
+  {
+    "imgURL": "http://i.imgur.com/jiigdGx.png",
+    "rosterURL": "https://nba-players.herokuapp.com/players-stats-teams/okc",
+    "teamName": "Oklahoma City Thunder",
+    "name": "Thunder",
+    "region": "Oklahoma City",
+    "color1": "#007AC1",
+    "color2": "#EF3B24"
+  },
+  {
+    "imgURL": "http://i.imgur.com/yy0G5CW.png",
+    "rosterURL": "https://nba-players.herokuapp.com/players-stats-teams/orl",
+    "teamName": "Orlando Magic",
+    "name": "Magic",
+    "region": "Orlando",
+    "color1": "#0077C0",
+    "color2": "#C4CED4"
+  },
+  {
+    "imgURL": "http://i.imgur.com/ncwfno3.png",
+    "rosterURL": "https://nba-players.herokuapp.com/players-stats-teams/phi",
+    "teamName": "Philadelphia 76ers",
+    "name": "76ers",
+    "region": "Philadelphia",
+    "color1": "#006BB6",
+    "color2": "#ED174C"
+  },
+  {
+    "imgURL": "http://i.imgur.com/hyi60nj.png",
+    "rosterURL": "https://nba-players.herokuapp.com/players-stats-teams/pho",
+    "teamName": "Phoenix Suns",
+    "name": "Suns",
+    "region": "Phoenix",
+    "color1": "#1D1160",
+    "color2": "#E56020"
+  },
+  {
+    "imgURL": "http://i.imgur.com/KGz8AY8.png",
+    "rosterURL": "https://nba-players.herokuapp.com/players-stats-teams/por",
+    "teamName": "Portland Trail Blazers",
+    "name": "Trail Blazers",
+    "region": "Portland",
+    "color1": "#E03A3E",
+    "color2": "#000000"
+  },
+  {
+    "imgURL": "http://i.imgur.com/WgHr0BH.png",
+    "rosterURL": "https://nba-players.herokuapp.com/players-stats-teams/sac",
+    "teamName": "Sacramento Kings",
+    "name": "Kings",
+    "region": "Sacramento",
+    "color1": "#5A2D81",
+    "color2": "#63727A"
+  },
+  {
+    "imgURL": "http://i.imgur.com/L7gca3G.png",
+    "rosterURL": "https://nba-players.herokuapp.com/players-stats-teams/sas",
+    "teamName": "San Antonio Spurs",
+    "name": "Spurs",
+    "region": "San Antonio",
+    "color1": "#C4CED4",
+    "color2": "#000000"
+  },
+  {
+    "imgURL": "http://i.imgur.com/prWiarY.png",
+    "rosterURL": "https://nba-players.herokuapp.com/players-stats-teams/tor",
+    "teamName": "Toronto Raptors",
+    "name": "Raptors",
+    "region": "Toronto",
+    "color1": "#CE1141",
+    "color2": "#000000"
+  },
+  {
+    "imgURL": "http://i.imgur.com/qV27ZrJ.png",
+    "rosterURL": "https://nba-players.herokuapp.com/players-stats-teams/uth",
+    "teamName": "Utah Jazz",
+    "name": "Jazz",
+    "region": "Utah",
+    "color1": "#002B5C",
+    "color2": "#00471B"
+  },
+  {
+    "imgURL": "http://i.imgur.com/KAX48d0.png",
+    "rosterURL": "https://nba-players.herokuapp.com/players-stats-teams/was",
+    "teamName": "Washington Wizards",
+    "name": "Wizards",
+    "region": "Washington",
+    "color1": "#002B5C",
+    "color2": "#E31837"
+  }
+]

@@ -1,0 +1,6 @@
+framework module Pods_NBAliteTests {
+  umbrella header "Pods-NBAliteTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

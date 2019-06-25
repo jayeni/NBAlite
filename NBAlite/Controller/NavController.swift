@@ -10,12 +10,10 @@ import UIKit
 
 class NavConroller: UINavigationController{
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-
+   
 
 }
 
