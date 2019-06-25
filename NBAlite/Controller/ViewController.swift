@@ -16,7 +16,7 @@ class TeamVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     func fetchvid(){
        
-        Alamofire.request("https://www.googleapis.com/youtube/v3/search", method: .get, parameters: ["part":"snippet","order":"viewCount","videoDefinition":"high","type":"video","q":"lebron","key":"AIzaSyA4RweMI9pQ0ZeyR1NJwTIBZkZB2e6h08k"], encoding: URLEncoding.default, headers: nil ).responseJSON(completionHandler: { (response) in
+        Alamofire.request("https://www.googleapis.com/youtube/v3/search", method: .get, parameters: ["part":"snippet","order":"viewCount","videoDefinition":"high","type":"video","q":"lebron","key":"AIzaSyAVPp2_0J4hTPWSYxuoSu7IYLPNpgo0oWo"], encoding: URLEncoding.default, headers: nil ).responseJSON(completionHandler: { (response) in
             
             if let JSON = response.result.value{
                 
@@ -39,6 +39,32 @@ class TeamVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     }
     
     let cellID = "ID"
+    
+    
+
+    func HextoColor(hex: String) -> UIColor? {
+    
+        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+        
+        if (cString.hasPrefix("#")) {
+            cString.remove(at: cString.startIndex)
+        }
+        
+        if ((cString.count) != 6) {
+            return UIColor.gray
+        }
+        
+        var rgbValue:UInt32 = 0
+        Scanner(string: cString).scanHexInt32(&rgbValue)
+        
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    
+                    }
     func fetchTeams(){
         
         let path = Bundle.main.path(forResource: "Nba_logo", ofType: "json")
@@ -60,8 +86,8 @@ class TeamVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
                 teaml.teamLoc = dict["region"] as? String
                 teaml.picloc = dict["imgURL"] as? String
                 teaml.rosterURL = dict["rosterURL"] as? String
-                teaml.Pcolor = UIColor(red: dict["r"] as! CGFloat, green: dict["g"] as! CGFloat,blue: dict["b"] as! CGFloat, alpha: dict["a"] as! CGFloat)
-                teaml.Scolor = UIColor(red: dict["r2"] as! CGFloat, green: dict["g2"] as! CGFloat,blue: dict["b2"] as! CGFloat, alpha: dict["a2"] as! CGFloat)
+                teaml.Pcolor =  HextoColor(hex: (dict["color1"] as? String)!)
+                teaml.Scolor = HextoColor(hex: (dict["color2"] as? String)!)
                 
                 self.Teams?.append(teaml)
             }
@@ -110,6 +136,9 @@ class TeamVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
         let tM = TeamMenu(collectionViewLayout: layout)
         tM.selectedTeam = Teams![indexPath.row]
         navigationController?.pushViewController( tM , animated: true)
+        
+        
+        
         
     }
 
